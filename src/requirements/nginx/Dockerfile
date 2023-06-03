@@ -1,3 +1,5 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y nginx && service nginx start && bash
+RUN apt update && apt install -y nginx
+
+CMD ["service","nginx","start"]
