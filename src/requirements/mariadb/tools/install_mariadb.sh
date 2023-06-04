@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
+bash
 service mysql start 
 
 mysql_secure_installation <<EOF
