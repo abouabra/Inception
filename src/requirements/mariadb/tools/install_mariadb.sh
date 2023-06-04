@@ -20,4 +20,4 @@ mariadb -e "SHOW DATABASES;"
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 
-# mysqld
+mysqld

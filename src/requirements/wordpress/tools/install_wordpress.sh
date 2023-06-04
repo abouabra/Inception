@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-bash
 cd /var/www/html/
 wget http://wordpress.org/latest.tar.gz
 tar -xzf /var/www/html/latest.tar.gz
@@ -14,3 +13,5 @@ sed -i 's/database_name_here/wordpress/' /var/www/html/wp-config.php
 sed -i 's/username_here/abouabra/' /var/www/html/wp-config.php
 sed -i 's/password_here/1598753246/' /var/www/html/wp-config.php
 sed -i 's/localhost/mariadb/' /var/www/html/wp-config.php
+
+/usr/sbin/php-fpm7.4 -F

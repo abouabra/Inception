@@ -6,6 +6,6 @@ COPY ./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
 
 COPY ./tools/install_mariadb.sh /home
 RUN chmod +x /home/install_mariadb.sh
-RUN /home/install_mariadb.sh
+CMD /home/install_mariadb.sh
 
-CMD sleep 9000000
+# CMD sleep 9000000
