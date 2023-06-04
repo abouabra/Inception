@@ -3,9 +3,10 @@ FROM debian:bullseye
 RUN apt update && apt install -y vim php-fpm wget php-cgi
 
 COPY ./tools/install_wordpress.sh /home
-RUN chmod +x /home/install_wordpress.sh
+RUN chmod +x /home/install_wordpress.sh && ./home/install_wordpress.sh && service php7.4-fpm start
 
-CMD ./home/install_wordpress.sh && /usr/sbin/php-fpm7.4 -F
+
+CMD /usr/sbin/php-fpm7.4 -F
 
 #CMD nginx -g "daemon off;"
 
