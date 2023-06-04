@@ -1,6 +1,6 @@
-FROM debian:bullseye
+FROM debian:buster
 
-RUN apt update && apt install -y vim mariadb-server php-mysql
+RUN apt-get update && apt-get install -y vim mariadb-server php-mysql
 
 COPY ./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
 
