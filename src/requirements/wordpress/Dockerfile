@@ -5,7 +5,7 @@ RUN apt update && apt install -y vim php-fpm wget php-cgi
 COPY ./tools/install_wordpress.sh /home
 RUN chmod +x /home/install_wordpress.sh
 
-CMD ./home/install_wordpress.sh
+CMD ./home/install_wordpress.sh && /usr/sbin/php-fpm7.4 -F
 
 #CMD nginx -g "daemon off;"
 
