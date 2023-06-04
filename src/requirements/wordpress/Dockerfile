@@ -2,12 +2,9 @@ FROM debian:bullseye
 
 RUN apt update && apt install -y vim php-fpm wget
 
-
 COPY ./tools/install_wordpress.sh /home
 RUN chmod +x /home/install_wordpress.sh
 RUN ./home/install_wordpress.sh
-
-WORKDIR /var/www/html/
 
 #CMD nginx -g "daemon off;"
 

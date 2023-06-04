@@ -1,3 +1,4 @@
+cd /var/www/html/
 rm -rf *
 wget http://wordpress.org/latest.tar.gz
 tar -xzf /var/www/html/latest.tar.gz
