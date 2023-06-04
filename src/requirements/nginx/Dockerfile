@@ -9,7 +9,7 @@ RUN openssl genpkey -algorithm RSA -out private.key && \
     openssl req -x509 -sha256 -days 365 -key private.key -in csr.csr -out certificate.crt && \
     openssl x509 -text -noout -in certificate.crt
 
-COPY ./conf /etc/nginx/sites-available/default
+COPY ./conf/nginx.conf /etc/nginx/sites-available/default
 CMD nginx -g "daemon off;"
 
 #to build the image: docker build --no-cache -t nginx:nginx .
