@@ -1,10 +1,11 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y vim php-fpm wget php-cgi
+RUN apt update && apt install -y vim php-fpm wget php-cgi bash
 
 COPY ./tools/install_wordpress.sh /home
-RUN chmod +x /home/install_wordpress.sh && ./home/install_wordpress.sh && service php7.4-fpm start
-
+RUN chmod +x /home/install_wordpress.sh
+ENTRYPOINT ["/home/install_wordpress.sh"]
+RUN service php7.4-fpm start
 
 CMD /usr/sbin/php-fpm7.4 -F
 

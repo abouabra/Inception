@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd /var/www/html/
 rm -rf *
 wget http://wordpress.org/latest.tar.gz
