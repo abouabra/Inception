@@ -2,6 +2,8 @@ FROM debian:bullseye
 
 RUN apt-get update && apt-get install -y vim php-fpm wget php-cgi bash
 
+RUN mkdir /run/php
+
 COPY ./tools/install_wordpress.sh /home
 RUN chmod +x /home/install_wordpress.sh
 RUN /home/install_wordpress.sh
