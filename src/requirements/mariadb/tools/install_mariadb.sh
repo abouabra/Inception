@@ -1,6 +1,6 @@
-#!/bin/bash
-bash
-service mysql start 
+#!/bin/sh
+
+service mariadb start 
 
 mysql_secure_installation <<EOF
 
@@ -14,8 +14,9 @@ y
 EOF
 
 mariadb -e "CREATE DATABASE wordpress;"
-mariadb -e "GRANT ALL ON wordpress.* TO 'abouabra'@'%' IDENTIFIED BY '1598753246' WITH GRANT OPTION;"
-mariadb -e "FLUSH PRIVILEGES"
+mariadb -e "CREATE USER 'abouabra'@'%' IDENTIFIED BY '1598753246' ;"
+mariadb -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'abouabra'@'%' ;"
+mariadb -e "FLUSH PRIVILEGES;"
 mariadb -e "SHOW DATABASES;"
 
 kill $(cat /var/run/mysqld/mysqld.pid)
