@@ -2,16 +2,10 @@ FROM debian:bullseye
 
 RUN apt update && apt install -y vim mariadb-server php-mysql
 
-RUN service mariadb start
+COPY ./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
+
+COPY ./tools/install_mariadb.sh /home
+RUN chmod +x /home/install_mariadb.sh
+RUN /home/install_mariadb.sh
+
 CMD sleep 9000000
-
-# RUN mysql_secure_installation <<EOF
-
-# y
-# 1598753246
-# 1598753246
-# y
-# y
-# y
-# y
-# EOF
