@@ -7,11 +7,7 @@ RUN chmod +x /home/install_wordpress.sh
 RUN sh /home/install_wordpress.sh
 RUN service php7.4-fpm start
 
-CMD /usr/sbin/php-fpm7.4 -F
-
-#CMD nginx -g "daemon off;"
-
-#docker volume create --driver local --opt type=none --opt device=/home/abouabra/data/wordpress --opt o=bind wordpress
+#CMD /usr/sbin/php-fpm7.4 -F
 
 
 # apt install -y php-fpm wget
