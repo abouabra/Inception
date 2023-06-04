@@ -4,7 +4,7 @@ RUN apt update && apt install -y vim php-fpm wget
 
 WORKDIR /var/www/html/
 
-RUN ./tools/install_wordpress.sh
+RUN ./tools/install_wordpress.sh 
 
 #CMD nginx -g "daemon off;"
 
