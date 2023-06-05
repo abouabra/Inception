@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     container_name: nginx
-    build: ./equirements/nginx/
+    build: ./requirements/nginx/
     depends_on:
       - wordpress
     ports:
