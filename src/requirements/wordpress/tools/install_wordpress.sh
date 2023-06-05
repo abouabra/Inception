@@ -8,9 +8,9 @@ mv wp-cli.phar /usr/local/bin/wp
 wp core download --path=/var/www/html --locale=en_US --allow-root
 
 cp wp-config-sample.php wp-config.php
-sed -i 's/database_name_here/${DB_NAME}/' /var/www/html/wp-config.php
-sed -i 's/username_here/${DB_USERNAME}/' /var/www/html/wp-config.php
-sed -i 's/password_here/${DB_PASSWORD}/' /var/www/html/wp-config.php
+sed -i "s/database_name_here/${DB_NAME}/" /var/www/html/wp-config.php
+sed -i "s/username_here/${DB_USERNAME}/" /var/www/html/wp-config.php
+sed -i "s/password_here/${DB_PASSWORD}/" /var/www/html/wp-config.php
 sed -i 's/localhost/mariadb/' /var/www/html/wp-config.php
 
 sed -i 's/;extension=curl/extension=mysqli/' /etc/php/7.4/cgi/php.ini
