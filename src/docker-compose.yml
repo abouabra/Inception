@@ -1,7 +1,9 @@
+version: '3'
+
 services:
   nginx:
     container_name: nginx
-    build: r./equirements/nginx/Dockerfile
+    build: ./equirements/nginx/Dockerfile
     depends_on:
       - wordpress
     ports:
