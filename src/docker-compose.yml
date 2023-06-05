@@ -39,7 +39,17 @@ services:
       - .env
     restart: always
 
-
+  protfolio:
+    image: inception:protfolio
+    container_name: protfolio
+    build: ./requirements/bonus/protfolio
+    volumes:
+      - protfolio_volume:/var/www/html
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
 
 volumes:
   mariadb_volume:
@@ -53,6 +63,12 @@ volumes:
     driver_opts:
       type: none
       device: /home/abouabra/data/wordpress
+      o: bind
+  protfolio_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/abouabra/data/protfolio
       o: bind
 
 
