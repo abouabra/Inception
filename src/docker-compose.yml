@@ -39,12 +39,12 @@ services:
       - .env
     restart: always
 
-  protfolio:
-    image: inception:protfolio
-    container_name: protfolio
-    build: ./requirements/bonus/protfolio
+  portfolio:
+    image: inception:portfolio
+    container_name: portfolio
+    build: ./requirements/bonus/portfolio
     volumes:
-      - protfolio_volume:/var/www/html
+      - portfolio_volume:/var/www/html
     networks:
       - net
     env_file:
@@ -64,11 +64,11 @@ volumes:
       type: none
       device: /home/abouabra/data/wordpress
       o: bind
-  protfolio_volume:
+  portfolio_volume:
     driver: local
     driver_opts:
       type: none
-      device: /home/abouabra/data/protfolio
+      device: /home/abouabra/data/portfolio
       o: bind
 
 
