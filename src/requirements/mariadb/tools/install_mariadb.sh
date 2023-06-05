@@ -1,7 +1,8 @@
 #!/bin/sh
 
 service mariadb start 
-
+cd /var/lib/mysql/
+rm -rf *
 mysql_secure_installation <<EOF
 
 y
