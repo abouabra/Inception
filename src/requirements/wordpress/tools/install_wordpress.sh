@@ -16,6 +16,6 @@ sed -i 's/localhost/mariadb/' /var/www/html/wp-config.php
 sed -i 's/;extension=curl/extension=mysqli/' /etc/php/7.4/cgi/php.ini
 sed -i 's/listen = \/run\/php\/php7.4-fpm.sock/listen = 0.0.0.0:9000/' /etc/php/7.4/fpm/pool.d/www.conf
 
-wp core install --url=http://wordpress --title="Inception" --admin_user=abouabra --admin_password=1598753246 --admin_email=aymanbouabra@gmail.com --allow-root
+# wp core install --url=http://wordpress --title="Inception" --admin_user=abouabra --admin_password=1598753246 --admin_email=aymanbouabra@gmail.com --allow-root
 
 /usr/sbin/php-fpm7.4 -F 
