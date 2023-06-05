@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     container_name: nginx
-    build: ./equirements/nginx/Dockerfile
+    build: ./equirements/nginx/
     depends_on:
       - wordpress
     ports:
@@ -16,7 +16,7 @@ services:
     
   wordpress:
     container_name: wordpress
-    build: ./requirements/wordpress/Dockerfile
+    build: ./requirements/wordpress/
     depends_on:
       - mariadb
     volumes:
@@ -29,7 +29,7 @@ services:
     
   mariadb:
     container_name: mariadb
-    build: ./requirements/mariadb/Dockerfile
+    build: ./requirements/mariadb/
     volumes:
       - mariadb_volume:/var/lib/mysql
     networks:
