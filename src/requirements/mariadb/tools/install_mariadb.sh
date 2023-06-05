@@ -13,13 +13,12 @@ y
 y
 EOF
 
-mariadb -e "CREATE DATABASE wordpress;"
-mariadb -e "CREATE USER 'abouabra'@'%' IDENTIFIED BY '1598753246' ;"
-mariadb -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'abouabra'@'%' ;"
+mariadb -e "CREATE DATABASE ${DB_NAME};"
+mariadb -e "CREATE USER '${DB_USERNAME}'@'%' IDENTIFIED BY '${DB_PASSWORD}' ;"
+mariadb -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USERNAME}'@'%' ;"
 mariadb -e "FLUSH PRIVILEGES;"
 mariadb -e "SHOW DATABASES;"
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 
-# sleep 999999
 mysqld
