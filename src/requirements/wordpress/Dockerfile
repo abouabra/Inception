@@ -6,11 +6,5 @@ RUN mkdir /run/php
 
 COPY ./tools/install_wordpress.sh /home
 RUN chmod +x /home/install_wordpress.sh
+
 CMD /home/install_wordpress.sh
-
-# CMD /usr/sbin/php-fpm7.4 -F
-
-
-# apt install -y php-fpm wget
-# service php7.4-fpm start
-# service php7.4-fpm status

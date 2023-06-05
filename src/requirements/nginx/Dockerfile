@@ -10,7 +10,5 @@ RUN openssl genpkey -algorithm RSA -out private.key && \
     openssl x509 -text -noout -in certificate.crt
 
 COPY ./conf/nginx.conf /etc/nginx/sites-available/default
-CMD nginx -g "daemon off;"
 
-#to build the image: docker build --no-cache -t nginx:nginx .
-#to run the container: docker run -d -p 443:443 nginx:nginx
+CMD nginx -g "daemon off;"
