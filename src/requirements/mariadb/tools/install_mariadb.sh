@@ -21,5 +21,5 @@ mariadb -e "SHOW DATABASES;"
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 
-sleep 999999
-#mysqld
+# sleep 999999
+mysqld
