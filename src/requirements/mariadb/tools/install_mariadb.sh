@@ -5,8 +5,8 @@ service mariadb start
 mysql_secure_installation <<EOF
 
 y
-1598753246
-1598753246
+${DB_PASSWORD}
+${DB_PASSWORD}
 y
 y
 y
