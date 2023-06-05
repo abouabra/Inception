@@ -1,12 +1,12 @@
 
-NAME = inception
-all: $(NAME)
+all: run
 
-$(NAME):
+run:
 	@docker compose -f src/docker-compose.yml up -d 
 
 stop:
 	@docker compose -f src/docker-compose.yml stop
+
 fclean:
 	@docker compose -f src/docker-compose.yml down -v 
 	@docker rmi --force $(docker image ls -aq)
