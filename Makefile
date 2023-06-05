@@ -3,12 +3,12 @@ NAME = inception
 all: $(NAME)
 
 $(NAME):
-	@docker compose up -d -f src/docker-compose.yml
+	@docker compose -f src/docker-compose.yml up -d 
 
 stop:
-	@docker compose stop -f src/docker-compose.yml
+	@docker compose -f src/docker-compose.yml stop
 fclean:
-	@docker compose down -v -f src/docker-compose.yml
+	@docker compose -f src/docker-compose.yml down -v 
 	@docker rmi --force $(docker image ls -aq)
 	@docker builder prune --force
 
