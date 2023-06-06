@@ -7,7 +7,6 @@ services:
     build: ./requirements/nginx/
     depends_on:
       - portfolio
-      - prometheus
     ports:
       - 443:443
     networks:
@@ -52,16 +51,18 @@ services:
       - .env
     restart: always
 
-  prometheus:
-    image: inception:prometheus
-    container_name: prometheus
-    build: ./requirements/bonus/prometheus
-    networks:
-      - net
+  netdata:
+    image: inception:netdata
+    container_name: netdata
+    build: ./requirements/bonus/netdata
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
     ports:
-      - 9090:9090
-    env_file:
-      - .env
+      - 2003:19999
     restart: always
 
 volumes:
