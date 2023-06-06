@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y vim curl
+RUN apt-get update && apt-get install -y vim wget
 
 WORKDIR /home/
 
