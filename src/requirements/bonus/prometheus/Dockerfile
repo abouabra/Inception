@@ -9,4 +9,5 @@ RUN wget https://github.com/prometheus/prometheus/releases/download/v2.44.0/prom
 # rm prometheus-2.44.0.linux-amd64.tar.gz \
 WORKDIR /home/prometheus-2.44.0.linux-amd64/
 
-CMD ./prometheus --config.file=prometheus.yml
+# CMD ./prometheus --config.file=prometheus.yml
+CMD sleep 99999999
