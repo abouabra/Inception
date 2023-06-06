@@ -5,8 +5,8 @@ services:
     image: inception:nginx
     container_name: nginx
     build: ./requirements/nginx/
-    # depends_on:
-    #   - portfolio
+    depends_on:
+      - portfolio
     ports:
       - 443:443
     networks:
@@ -41,17 +41,15 @@ services:
       - .env
     restart: always
 
-  # portfolio:
-  #   image: inception:portfolio
-  #   container_name: portfolio
-  #   build: ./requirements/bonus/portfolio
-  #   volumes:
-  #     - portfolio_volume:/var/www/html
-  #   networks:
-  #     - net
-  #   env_file:
-  #     - .env
-  #   restart: always
+  portfolio:
+    image: inception:portfolio
+    container_name: portfolio
+    build: ./requirements/bonus/portfolio
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
 
 volumes:
   mariadb_volume:
