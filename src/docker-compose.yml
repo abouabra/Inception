@@ -65,6 +65,18 @@ services:
       - 2003:19999
     restart: always
 
+  adminer:
+    image: inception:adminer
+    container_name: adminer
+    build: ./requirements/bonus/adminer
+    depends_on:
+      - mariadb
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
+
 volumes:
   mariadb_volume:
     driver: local
