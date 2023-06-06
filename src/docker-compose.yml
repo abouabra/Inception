@@ -10,6 +10,7 @@ services:
       - prometheus
     ports:
       - 443:443
+      - 9090:9090
     networks:
       - net
     volumes:
