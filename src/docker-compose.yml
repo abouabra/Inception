@@ -5,8 +5,8 @@ services:
     image: inception:nginx
     container_name: nginx
     build: ./requirements/nginx/
-    depends_on:
-      - portfolio
+    # depends_on:
+    #   - portfolio
     ports:
       - 443:443
     networks:
@@ -41,17 +41,17 @@ services:
       - .env
     restart: always
 
-  portfolio:
-    image: inception:portfolio
-    container_name: portfolio
-    build: ./requirements/bonus/portfolio
-    volumes:
-      - portfolio_volume:/var/www/html
-    networks:
-      - net
-    env_file:
-      - .env
-    restart: always
+  # portfolio:
+  #   image: inception:portfolio
+  #   container_name: portfolio
+  #   build: ./requirements/bonus/portfolio
+  #   volumes:
+  #     - portfolio_volume:/var/www/html
+  #   networks:
+  #     - net
+  #   env_file:
+  #     - .env
+  #   restart: always
 
 volumes:
   mariadb_volume:
@@ -66,12 +66,12 @@ volumes:
       type: none
       device: /home/abouabra/data/wordpress
       o: bind
-  portfolio_volume:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/abouabra/data/portfolio
-      o: bind
+  # portfolio_volume:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: /home/abouabra/data/portfolio
+  #     o: bind
 
 
 
