@@ -51,6 +51,16 @@ services:
       - .env
     restart: always
 
+  prometheus:
+    image: inception:prometheus
+    container_name: prometheus
+    build: ./requirements/bonus/prometheus
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
+
 volumes:
   mariadb_volume:
     driver: local
