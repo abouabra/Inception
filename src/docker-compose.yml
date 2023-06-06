@@ -64,13 +64,6 @@ volumes:
       type: none
       device: /home/abouabra/data/wordpress
       o: bind
-  # portfolio_volume:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     device: /home/abouabra/data/portfolio
-  #     o: bind
-
 
 
 networks:
