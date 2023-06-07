@@ -1,6 +1,5 @@
 !/bin/sh
 
-
 service vsftpd start
 
 sed -i "s/#write_enable=YES/write_enable=YES/" /etc/vsftpd.conf
@@ -17,4 +16,4 @@ usermod -d /var/ftp_home/ ${FTP_USER}
 chown -R www-data:www-data /var/www/html/
 chmod -R 755 /var/www/html/
 
-sleep 9999999999
+vsftpd -D
