@@ -97,6 +97,8 @@ services:
     build: ./requirements/bonus/redis
     volumes:
       - wordpress_volume:/var/www/html
+    ports:
+     - 6379:6379
     networks:
       - net
     env_file:
