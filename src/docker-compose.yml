@@ -77,6 +77,18 @@ services:
       - .env
     restart: always
 
+  ftp:
+    image: inception:ftp
+    container_name: ftp
+    build: ./requirements/bonus/ftp
+    ports:
+      - 21:21
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
+
 volumes:
   mariadb_volume:
     driver: local
