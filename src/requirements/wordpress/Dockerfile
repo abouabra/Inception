@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y vim php-fpm wget php-cgi php-mysql curl
 RUN mkdir /run/php
 
 COPY ./tools/install_wordpress.sh /home
-RUN chmod +x /home/install_wordpress.sh
 
-CMD /home/install_wordpress.sh
+RUN chmod +x /home/install_wordpress.sh
+RUN /home/install_wordpress.sh
+
+CMD /usr/sbin/php-fpm7.4 -F 
