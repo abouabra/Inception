@@ -4,7 +4,7 @@ service vsftpd start
 
 sed -i "s/#write_enable=YES/write_enable=YES/" /etc/vsftpd.conf
 
-mkdir /var/ftp_home
+mkdir -p /var/ftp_home
 
 useradd ${FTP_USER}
 echo "${FTP_USER}:${FTP_PASSWORD}" | chpasswd
