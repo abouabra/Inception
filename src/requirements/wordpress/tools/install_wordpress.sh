@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-# cd /var/www/html/
+cd /var/www/html/
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
@@ -23,4 +23,4 @@ wp theme activate twentytwentytwo  --allow-root
 chown -R www-data:www-data /var/www/html/
 chmod -R 755 /var/www/html/
 
-# /usr/sbin/php-fpm7.4 -F 
+/usr/sbin/php-fpm7.4 -F 
