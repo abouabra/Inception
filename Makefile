@@ -3,9 +3,9 @@ all: run
 
 run:
 	@rm -rf /home/abouabra/data
-	@mkdir -p /home/abouabra/data
-	@mkdir -p /home/abouabra/data/wordpress
-	@mkdir -p /home/abouabra/data/mariadb
+# @mkdir -p /home/abouabra/data
+# @mkdir -p /home/abouabra/data/wordpress
+# @mkdir -p /home/abouabra/data/mariadb
 	@docker compose -f src/docker-compose.yml up -d --build
 
 stop:
