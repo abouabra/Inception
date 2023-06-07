@@ -81,6 +81,8 @@ services:
     image: inception:ftp
     container_name: ftp
     build: ./requirements/bonus/ftp
+    volumes:
+      - wordpress_volume:/var/www/html
     ports:
       - 21:21
     networks:
