@@ -91,6 +91,19 @@ services:
       - .env
     restart: always
 
+  redis:
+    image: inception:redis
+    container_name: redis
+    build: ./requirements/bonus/redis
+    volumes:
+      - wordpress_volume:/var/www/html
+    networks:
+      - net
+    env_file:
+      - .env
+    restart: always
+
+
 volumes:
   mariadb_volume:
     driver: local
