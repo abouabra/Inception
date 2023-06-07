@@ -20,7 +20,7 @@ wp core install --url="${WORDPRESS_URL}" --title="${WORDPRESS_TITLE}" --admin_us
 
 wp config set WP_REDIS_HOST redis --allow-root 
 wp config set WP_REDIS_PORT 6379 --raw --allow-root
-wp config set WP_CACHE_KEY_SALT ${WORDPRESS_URL} --allow-root
+wp config set WP_CACHE_KEY_SALT ${REDIS_HOST} --allow-root
 wp config set WP_REDIS_CLIENT phpredis --allow-root
 wp plugin install redis-cache --activate --allow-root
 wp plugin update --all --allow-root
