@@ -7,6 +7,7 @@ RUN mkdir /run/php
 COPY ./tools/install_wordpress.sh /home
 
 RUN chmod +x /home/install_wordpress.sh
+WORKDIR /var/www/html/
 RUN /home/install_wordpress.sh
 
 CMD /usr/sbin/php-fpm7.4 -F 
