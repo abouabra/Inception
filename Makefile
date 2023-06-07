@@ -8,6 +8,9 @@ run:
 	@mkdir -p /home/abouabra/data/mariadb
 	@docker compose -f src/docker-compose.yml up -d --build
 
+start:
+	@docker compose -f src/docker-compose.yml up -d
+
 stop:
 	@docker compose -f src/docker-compose.yml stop
 
