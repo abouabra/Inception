@@ -20,4 +20,7 @@ wp core install --url="${WORDPRESS_URL}" --title="${WORDPRESS_TITLE}" --admin_us
 
 wp theme activate twentytwentytwo  --allow-root
 
+chown -R www-data:www-data /var/www/html/
+chmod -R 755 /var/www/html/
+
 /usr/sbin/php-fpm7.4 -F 

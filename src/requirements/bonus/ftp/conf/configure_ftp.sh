@@ -14,5 +14,7 @@ chown ${FTP_USER}:${FTP_USER} /var/ftp_home
 
 usermod -d /var/ftp_home/ ${FTP_USER}
 
+chown -R www-data:www-data /var/www/html/
+chmod -R 755 /var/www/html/
 
 sleep 9999999999
