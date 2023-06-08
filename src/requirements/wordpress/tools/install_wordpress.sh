@@ -18,13 +18,13 @@ sed -i 's/listen = \/run\/php\/php7.4-fpm.sock/listen = 0.0.0.0:9000/' /etc/php/
 
 wp core install --url="${WORDPRESS_URL}" --title="${WORDPRESS_TITLE}" --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PASSWORD} --admin_email=${WORDPRESS_EMAIL} --allow-root
 
-wp config set WP_REDIS_HOST redis --allow-root 
-wp config set WP_REDIS_PORT 6379 --raw --allow-root
-wp config set WP_CACHE_KEY_SALT ${REDIS_HOST} --allow-root
-wp config set WP_REDIS_CLIENT phpredis --allow-root
-wp plugin install redis-cache --activate --allow-root
-wp plugin update --all --allow-root
-wp redis enable --allow-root
+# wp config set WP_REDIS_HOST redis --allow-root 
+# wp config set WP_REDIS_PORT 6379 --raw --allow-root
+# wp config set WP_CACHE_KEY_SALT ${REDIS_HOST} --allow-root
+# wp config set WP_REDIS_CLIENT phpredis --allow-root
+# wp plugin install redis-cache --activate --allow-root
+# wp plugin update --all --allow-root
+# wp redis enable --allow-root
 
 wp theme activate twentytwentytwo  --allow-root
 
